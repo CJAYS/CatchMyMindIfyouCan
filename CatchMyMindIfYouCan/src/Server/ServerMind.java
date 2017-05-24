@@ -16,7 +16,7 @@ public class ServerMind {
 				vec.add(socket);
 				//스레드 구동
 				new EchoThread(socket, vec).start();
-	 * */
+	*/
 	public ServerMind() {
 		try {
 			serverSocket = new ServerSocket(7777);

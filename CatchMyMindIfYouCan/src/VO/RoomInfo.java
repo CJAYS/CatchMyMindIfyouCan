@@ -1,6 +1,8 @@
 package VO;
 
-public class RoomInfo {
+import java.io.Serializable;
+
+public class RoomInfo implements Serializable{
 	String roomTitle;
 	int roomJoinableNumber;
 	

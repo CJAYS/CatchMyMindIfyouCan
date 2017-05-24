@@ -1,18 +1,20 @@
 package VO;
 
+import java.io.Serializable;
+
 import Client.GameFrame;
 import Client.LoginFrame;
 import Client.WaitFrame;
 
-public class ProtocolInfo {
-	final int ACCESS_MODE = 1;
-	final int EXIT_MODE = 2;
-	final int CREATE_MODE = 3;
-	final int JOIN_MODE = 4;
-	final int WAIT_MODE = 5;
-	final int GAMECHAT_MODE = 6;
-	final int WAITCHAT_MODE = 7;
-	final int PAINT_MODE = 8;
+public class ProtocolInfo implements Serializable{
+	public static final int ACCESS_MODE = 1;
+	public static final int EXIT_MODE = 2;
+	public static final int CREATE_MODE = 3;
+	public static final int JOIN_MODE = 4;
+	public static final int WAIT_MODE = 5;
+	public static final int GAMECHAT_MODE = 6;
+	public static final int WAITCHAT_MODE = 7;
+	public static final int PAINT_MODE = 8;
 	
 	String[] userList, roomList;
 
@@ -24,7 +26,7 @@ public class ProtocolInfo {
 	RoomInfo roomInfo;
 	UserInfo userInfo;
 	int protocolMode;
-	
+	public ProtocolInfo() {}
 	public ProtocolInfo(RoomInfo roomInfo, UserInfo userInfo, int protocolMode) {
 		this.roomInfo = roomInfo;
 		this.userInfo = userInfo;

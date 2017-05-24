@@ -1,8 +1,9 @@
 package VO;
 
 import java.awt.Color;
+import java.io.Serializable;
 
-public class PaintInfo {
+public class PaintInfo implements Serializable {
 	private int x, y, wh;
 	private Color color;
 	public PaintInfo(int x, int y, int wh, Color color) {
