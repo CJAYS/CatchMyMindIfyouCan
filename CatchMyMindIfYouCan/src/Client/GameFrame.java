@@ -1,5 +1,11 @@
 package Client;
 
-public class GameFrame {
-	//¼ÒÄÏÆ²
+import javax.swing.JPanel;
+
+public class GameFrame extends JPanel{
+
+	public GameFrame(ClientMind client) {
+		
+	}
+
 }

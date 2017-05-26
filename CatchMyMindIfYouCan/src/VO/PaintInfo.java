@@ -3,7 +3,7 @@ package VO;
 import java.awt.Color;
 import java.io.Serializable;
 
-public class PaintInfo implements Serializable {
+public class PaintInfo implements Serializable{
 	private int x, y, wh;
 	private Color color;
 	public PaintInfo(int x, int y, int wh, Color color) {
@@ -36,5 +36,4 @@ public class PaintInfo implements Serializable {
 	public void setColor(Color color) {
 		this.color = color;
 	}
-	
 }

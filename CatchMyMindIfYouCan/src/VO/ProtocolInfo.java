@@ -8,29 +8,50 @@ import Client.WaitFrame;
 
 public class ProtocolInfo implements Serializable{
 	public static final int ACCESS_MODE = 1;
-	public static final int EXIT_MODE = 2;
+	public static final int EXIT_MODE_WAIT = 2;
 	public static final int CREATE_MODE = 3;
 	public static final int JOIN_MODE = 4;
 	public static final int WAIT_MODE = 5;
 	public static final int GAMECHAT_MODE = 6;
 	public static final int WAITCHAT_MODE = 7;
 	public static final int PAINT_MODE = 8;
+	public static final int REGISTER_MODE = 9;
+	public static final int EXIT_MODE_GAME = 10;
+	public static final int WAIT_USER_LIST = 11;
 	
-	String[] userList, roomList;
+	public String[] userList, roomList;
+	public String[] userWaitList;
 
-	GameFrame gf;
-	LoginFrame lf;
-	WaitFrame wf;
+	public GameFrame gf;
+	public LoginFrame lf;
+	public WaitFrame wf;
 	
-	PaintInfo paintInfo;
-	RoomInfo roomInfo;
-	UserInfo userInfo;
+	public PaintInfo paintInfo;
+	public RoomInfo roomInfo;
+	public UserInfo userInfo;
+	public String waitRoomMsg;
 	int protocolMode;
-	public ProtocolInfo() {}
+	boolean status = false;
+	boolean isDuplicated = false;
+	
+	public ProtocolInfo() { 
+	}
 	public ProtocolInfo(RoomInfo roomInfo, UserInfo userInfo, int protocolMode) {
 		this.roomInfo = roomInfo;
 		this.userInfo = userInfo;
 		this.protocolMode = protocolMode; 
+	}
+	public String[] getUserWaitList() {
+		return userWaitList;
+	}
+	public void setUserWaitList(String[] userWaitList) {
+		this.userWaitList = userWaitList;
+	}
+	public boolean getDuplicated() {
+		return isDuplicated;
+	}
+	public void setDuplicated(boolean isDuplicated) {
+		this.isDuplicated = isDuplicated;
 	}
 	public String[] getUserList() {
 		return userList;
@@ -85,5 +106,20 @@ public class ProtocolInfo implements Serializable{
 	}
 	public void setProtocolMode(int protocolMod) {
 		this.protocolMode = protocolMod;
+	}
+	public void isSucceed(){
+		status = true;
+	}
+	public boolean getStatus() {
+		return status;
+	}
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+	public String getWaitRoomMsg() {
+		return waitRoomMsg;
+	}
+	public void setWaitRoomMsg(String waitRoomMsg) {
+		this.waitRoomMsg = waitRoomMsg;
 	}
 }
